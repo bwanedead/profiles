@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"echo $PROFILE\")",
+      "Bash(dir:*)",
+      "Bash(powershell -Command \"Write-Host $PROFILE\")",
+      "Bash(powershell -Command \"$PROFILE\")",
+      "Bash(powershell:*)",
+      "Bash(git init:*)",
+      "Bash(pwsh -Command:*)",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" add Microsoft.PowerShell_profile.ps1)",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" commit -m \"$\\(cat <<''EOF''\nAdd profile/prof navigation and ps prof to edit\n\n- profile, prof: navigate to C:\\\\projects\\\\profiles\n- ps profile, ps prof: open profile in notepad\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" push)",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" commit -m \"$\\(cat <<''EOF''\nFix profile edit - use ''prof edit'' instead of ''ps prof''\n\nps is a built-in alias for Get-Process. Changed to:\n- prof / profile: navigate to repo\n- prof edit / profile edit: open in notepad\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" add Microsoft.PowerShell_profile.ps1 ryan.omp.json)",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" commit -m \"$\\(cat <<''EOF''\nAdd Oh My Posh theme to repo\n\n- Added ryan.omp.json theme file\n- Updated profile to load theme from repo path\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" add CLAUDE.md AGENTS.md)",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" commit -m \"$\\(cat <<''EOF''\nAdd CLAUDE.md and AGENTS.md documentation\n\n- CLAUDE.md: Instructions for AI assistants working on this repo\n- AGENTS.md: Project overview, architecture diagram, and setup guide\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" add AGENTS.md)",
+      "Bash(git -C \"C:\\\\projects\\\\profiles\" commit -m \"$\\(cat <<''EOF''\nUpdate AGENTS.md with detailed wiring instructions\n\n- Added full pointer file template with DO NOT EDIT header\n- Explained why the pointer file matters for agents and users\n- Clear instructions for clean setup on new machines\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}

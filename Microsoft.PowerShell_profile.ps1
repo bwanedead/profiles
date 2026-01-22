@@ -104,6 +104,8 @@ function chess      { z chessterra }
 
 function algent    { z algent }
 
+$PROFILE_REPO = "C:\projects\profiles\Microsoft.PowerShell_profile.ps1"
+
 function profile {
   param(
     [Parameter(ValueFromRemainingArguments=$true)]
@@ -111,7 +113,7 @@ function profile {
   )
 
   if ($Args.Count -ge 1 -and $Args[0] -in "edit", "e") {
-    notepad $PROFILE
+    notepad $PROFILE_REPO
     return
   }
 

@@ -104,27 +104,21 @@ function chess      { z chessterra }
 
 function algent    { z algent }
 
-function profile   { Set-Location "C:\projects\profiles" }
-function prof      { Set-Location "C:\projects\profiles" }
-
-function ps {
+function profile {
   param(
     [Parameter(ValueFromRemainingArguments=$true)]
     [string[]]$Args
   )
 
-  if ($Args.Count -eq 0) {
-    Write-Host "Usage: ps profile | ps prof" -ForegroundColor Cyan
-    return
-  }
-
-  if ($Args[0] -in "profile", "prof") {
+  if ($Args.Count -ge 1 -and $Args[0] -in "edit", "e") {
     notepad $PROFILE
     return
   }
 
-  Write-Error "ps: unknown subcommand: $($Args -join ' ')"
+  Set-Location "C:\projects\profiles"
 }
+
+function prof { profile @Args }
 
 function agentkit  { Set-Location "C:\projects\agent-kit" }
 function ak        { Set-Location "C:\projects\agent-kit" }

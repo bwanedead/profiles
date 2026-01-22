@@ -315,8 +315,8 @@ function d14r75 { deed T14R75 }   # one-word jump to your first township folder
 # Let Oh My Posh show venv (avoid default "(.venv)" prefix)
 $env:VIRTUAL_ENV_DISABLE_PROMPT = "1"
 
-# Oh My Posh (custom theme)
-$ompTheme = Join-Path (Split-Path -Parent $PROFILE) "ryan.omp.json"
+# Oh My Posh (custom theme from repo)
+$ompTheme = "C:\projects\profiles\ryan.omp.json"
 oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
 
 

@@ -327,4 +327,7 @@ oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
 # profile-update: jump plat => C:\projects\Plattera
 function plat { Set-Location "C:\projects\Plattera" }
 
+# profile-update: jump ralph => C:\projects\ralph
+function ralph { Set-Location "C:\projects\ralph" }
+
 # --- end profile-update managed section ---

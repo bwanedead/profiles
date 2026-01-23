@@ -320,3 +320,11 @@ $ompTheme = "C:\projects\profiles\ryan.omp.json"
 oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
 
 
+# --- profile-update managed section (do not edit) ---
+# This section is maintained by the profile-update skill.
+# Manual edits may be overwritten.
+
+# profile-update: jump plat => C:\projects\Plattera
+function plat { Set-Location "C:\projects\Plattera" }
+
+# --- end profile-update managed section ---

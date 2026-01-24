@@ -328,6 +328,16 @@ oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
 function plat { Set-Location "C:\projects\Plattera" }
 
 # profile-update: jump ralph => C:\projects\ralph
-function ralph { Set-Location "C:\projects\ralph" }
+function ralph {
+  param([Parameter(ValueFromRemainingArguments=$true)][string[]]$Args)
+  if ($Args.Count -ge 1 -and $Args[0] -ieq "engine") {
+    Set-Location "C:\projects\ralph-engine"
+    return
+  }
+  Set-Location "C:\projects\ralph"
+}
+
+# profile-update: jump re => C:\projects\ralph-engine
+function re { Set-Location "C:\projects\ralph-engine" }
 
 # --- end profile-update managed section ---

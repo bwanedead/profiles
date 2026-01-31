@@ -117,6 +117,11 @@ function profile {
     return
   }
 
+  if ($Args.Count -ge 1 -and $Args[0] -in "off", "none", "bare") {
+    pwsh -NoProfile
+    return
+  }
+
   Set-Location "C:\projects\profiles"
 }
 
@@ -315,9 +320,13 @@ function d14r75 { deed T14R75 }   # one-word jump to your first township folder
 # Let Oh My Posh show venv (avoid default "(.venv)" prefix)
 $env:VIRTUAL_ENV_DISABLE_PROMPT = "1"
 
+# Oh My Posh cache path (avoid LocalCache write failures)
+$env:POSH_PATH = 'C:\projects\profiles\.cache\oh-my-posh'
+New-Item -ItemType Directory -Force -Path $env:POSH_PATH | Out-Null
+
 # Oh My Posh (custom theme from repo)
 $ompTheme = "C:\projects\profiles\ryan.omp.json"
-oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
+oh-my-posh init pwsh --config $ompTheme --eval | Invoke-Expression
 
 
 # --- profile-update managed section (do not edit) ---

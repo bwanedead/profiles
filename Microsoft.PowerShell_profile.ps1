@@ -302,7 +302,6 @@ function deed {
   }
 }
 
-function ds   { deed }            # short
 function d14r75 { deed T14R75 }   # one-word jump to your first township folder
 
 
@@ -344,5 +343,18 @@ function prose-ada { Set-Location "C:\projects\stories\prose-ada" }
 
 # profile-update: jump prosada-app => C:\projects\prosada-app
 function prosada-app { Set-Location "C:\projects\prosada-app" }
+
+# profile-update: jump ds => C:\projects\stories\dad-story
+function ds { Set-Location "C:\projects\stories\dad-story" }
+
+# profile-update: jump dad => C:\projects\stories\dad-story (handles "dad story")
+function dad {
+  param([Parameter(ValueFromRemainingArguments=$true)][string[]]$Args)
+  if ($Args.Count -ge 1 -and $Args[0] -ieq "story") {
+    Set-Location "C:\projects\stories\dad-story"
+    return
+  }
+  Set-Location "C:\projects\stories\dad-story"
+}
 
 # --- end profile-update managed section ---

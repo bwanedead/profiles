@@ -71,27 +71,16 @@ function pa {
   )
 
   if ($Args.Count -eq 0) {
-    z prose ada
+    Set-Location "C:\projects\stories\prose-ada"
     return
   }
 
   if ($Args[0] -eq "app") {
-    if ($Args.Count -eq 1) {
-      Set-Location "C:\projects\prose-ada\application"
-      return
-    }
-    $sub = $Args[1]
-    if ($sub -in "b", "back", "backend") {
-      Set-Location "C:\projects\prose-ada\application\backend"
-      return
-    }
-    if ($sub -in "f", "front", "frontend") {
-      Set-Location "C:\projects\prose-ada\application\frontend"
-      return
-    }
+    Set-Location "C:\projects\prosada-app"
+    return
   }
 
-  z prose ada @Args
+  Write-Error "pa: unknown subcommand: $($Args -join ' ')"
 }
 
 function sinap     { z sinap }
@@ -348,5 +337,11 @@ function ralph {
 
 # profile-update: jump re => C:\projects\ralph-engine
 function re { Set-Location "C:\projects\ralph-engine" }
+
+# profile-update: jump prose-ada => C:\projects\stories\prose-ada
+function prose-ada { Set-Location "C:\projects\stories\prose-ada" }
+
+# profile-update: jump prosada-app => C:\projects\prosada-app
+function prosada-app { Set-Location "C:\projects\prosada-app" }
 
 # --- end profile-update managed section ---

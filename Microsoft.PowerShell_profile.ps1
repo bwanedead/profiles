@@ -61,8 +61,9 @@ function home      { z home }
 function plattera  { z plattera }
 function frontend  { z plattera frontend }   # or call it: pf / platterafrontend
 
-function proseada  { z prose ada }
-function prose     { z prose ada }
+function proseada  { Set-Location "C:\projects\stories\prose-ada" }
+function prose     { Set-Location "C:\projects\stories\prose-ada" }
+function prosada   { Set-Location "C:\projects\prosada-app" }
 
 function pa {
   param(

@@ -120,20 +120,6 @@ function prof { profile @Args }
 function agentkit  { Set-Location "C:\projects\agent-kit" }
 function ak        { Set-Location "C:\projects\agent-kit" }
 
-function agent {
-  param(
-    [Parameter(ValueFromRemainingArguments=$true)]
-    [string[]]$Args
-  )
-
-  if ($Args.Count -eq 0 -or $Args[0] -ieq "kit") {
-    Set-Location "C:\projects\agent-kit"
-    return
-  }
-
-  Write-Error "agent: unknown subcommand: $($Args -join ' ')"
-}
-
 # --- venv helpers ---
 function venv {
   param(
